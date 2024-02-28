@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
 import Feed from "../features/Feed/Feed";
 import AuthForm from "../features/Login/AuthForm";
-/*import SinglePost from "../features/Feed/SinglePost/SinglePost";*/
+import SinglePost from "../features/Feed/SinglePost/SinglePost";
 
 const router = createBrowserRouter([
   {
@@ -17,10 +17,10 @@ const router = createBrowserRouter([
         path: "/login",
         element: <AuthForm />,
       },
-      /*{
+      {
         path: "/:id",
         element: <SinglePost />,
-      },*/
+      },
     ],
   },
 ]);

@@ -1,3 +1,14 @@
-.feed_container {
+nav {
     display: flex;
+    align-items: baseline;
+}
+
+menu {
+    display: flex;
+    gap: 2rem;
+    padding-left: 10rem;
+}
+
+menu>li {
+    list-style: none;
 }
