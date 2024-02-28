@@ -1,0 +1,12 @@
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  
+    width: 30ch;
+  
+    label {
+      display: flex;
+      flex-direction: column;
+    }
+  }
