@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Root from "./Root";
-/*import Feed from "../features/Feed/Feed";*/
+import Feed from "../features/Feed/Feed";
 import AuthForm from "../features/Login/AuthForm";
 /*import SinglePost from "../features/Feed/SinglePost/SinglePost";*/
 
@@ -11,7 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <AuthForm />,
+        element: <Feed />,
       },
       {
         path: "/login",

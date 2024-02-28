@@ -1,4 +1,4 @@
-import api from "./api";
+import api from "../../store/api";
 
 const postsApi = api.injectEndpoints({
   endpoints: (builder) => ({
@@ -7,15 +7,11 @@ const postsApi = api.injectEndpoints({
       transformResponse: (response) => response.data.posts,
       providesTags: ["Posts"],
     }),
-    getPostById: builder.query({
-      query: (id) => "/posts/" + id,
-      providesTags: ["Posts"],
-    }),
     addPost: builder.mutation({
       query: (post) => ({
         url: "/posts",
         method: "POST",
-        body: post,
+        body: { post },
       }),
       invalidatesTags: ["Posts"],
     }),
@@ -29,9 +25,5 @@ const postsApi = api.injectEndpoints({
   }),
 });
 
-export const {
-  useGetPostsQuery,
-  useGetPostByIdQuery,
-  useAddPostMutation,
-  useDeletePostMutation,
-} = postsApi;
+export const { useGetPostsQuery, useAddPostMutation, useDeletePostMutation } =
+  postsApi;
