@@ -1,10 +1,7 @@
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import {
-  useGetPostsQuery,
-  useDeletePostMutation,
-  useVerifyUserQuery,
-} from "../postsApiSlice";
+import { useGetPostsQuery, useDeletePostMutation } from "../postsApiSlice";
+import { useVerifyUserQuery } from "../../Login/authSlice";
 import { selectToken } from "../../Login/authSlice";
 
 export default function SinglePost() {
@@ -27,16 +24,21 @@ export default function SinglePost() {
       {isLoading ? (
         <p>Post is loading</p>
       ) : (
-        <article className="post_card">
-          <h2>{post.title}</h2>
-          <p>{post.description}</p>
-          <p>{post.price}</p>
-          {token && post.author.username === verification ? (
-            <button onClick={() => deleteSinglePost(post._id)}>Delete</button>
-          ) : (
-            <></>
-          )}
-        </article>
+        <div>
+          <article className="post_card">
+            <h2>{post.title}</h2>
+            <p>{post.description}</p>
+            <p>{post.price}</p>
+            {token && post.author.username === verification ? (
+              <button onClick={() => deleteSinglePost(post._id)}>Delete</button>
+            ) : (
+              <></>
+            )}
+          </article>
+          <Link to={`/`}>
+            <p>Return to Main Feed</p>
+          </Link>
+        </div>
       )}
     </div>
   );

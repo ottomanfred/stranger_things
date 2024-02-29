@@ -25,10 +25,14 @@ const authApi = api.injectEndpoints({
       transformResponse: (response) => response.data,
       transformErrorResponse: (response) => response.data.error.message,
     }),
+    verifyUser: builder.query({
+      query: (token) => "/test/me",
+      transformResponse: (response) => response.data.user.username,
+    }),
   }),
 });
 
-export const { useRegisterMutation, useLoginMutation } = authApi;
+export const { useRegisterMutation, useLoginMutation, useVerifyUserQuery } = authApi;
 
 /** Session storage key */
 const TOKEN_KEY = 'token';

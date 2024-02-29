@@ -20,7 +20,7 @@ export default function Navbar() {
   //
   return (
     <nav>
-      <h1>PostRepo</h1>
+      <h1>Strangers' Things</h1>
       <menu>
         <li>
           <NavLink to="/">Home</NavLink>

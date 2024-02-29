@@ -22,12 +22,8 @@ const postsApi = api.injectEndpoints({
       }),
       invalidatesTags: ["Posts"],
     }),
-    verifyUser: builder.query({
-      query: (token) => "/test/me",
-      transformResponse: (response) => response.data.user.username,
-    }),
   }),
 });
 
-export const { useGetPostsQuery, useAddPostMutation, useDeletePostMutation, useVerifyUserQuery } =
+export const { useGetPostsQuery, useAddPostMutation, useDeletePostMutation } =
   postsApi;

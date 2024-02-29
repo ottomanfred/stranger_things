@@ -20,6 +20,7 @@ nav {
     justify-content: space-between;
 
     height: 6rem;
+    padding-bottom: 1rem;
     border-bottom: solid black .25px;
 }
 
@@ -61,4 +62,13 @@ menu>li {
     border-radius: 5%;
     margin: 1rem;
     padding: .5rem;
+}
+
+.post_message_input {
+    height: 5rem;
+}
+
+button {
+    border: solid black .015rem;
+    background-color: rgb(192, 188, 188);
 }
