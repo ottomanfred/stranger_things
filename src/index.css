@@ -1,3 +1,10 @@
+* {
+  padding: 0;
+  margin: 0;
+
+  box-sizing: border-box;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -31,7 +38,7 @@ body {
 }
 
 h1 {
-  font-size: 3.2rem;
+  font-size: 2rem;
 }
 
 button {
@@ -66,7 +73,7 @@ button:focus-visible {
     background-color: rgb(192, 188, 188);
   }
 
-  .post_card>button {
+  .post_card > button {
     width: 6rem;
   }
 }
