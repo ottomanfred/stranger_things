@@ -20,7 +20,7 @@ export default function Feed() {
     <div className="feed_container">
       <ul className="feed">
         {!token ? (
-            <p>You must be logged in to see your make posts.</p>
+            <div className="login_notification"><p>You must be logged in to see your make posts.</p></div>
         ) : (
           <MakePost />
         )}

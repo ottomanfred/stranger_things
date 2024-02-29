@@ -17,6 +17,7 @@ export default function MakePost() {
   };
 
   return (
+    <div className="form_container">
     <form onSubmit={create}>
       <label>
         Input post title:
@@ -47,5 +48,6 @@ export default function MakePost() {
       </label>
       <button>Create</button>
     </form>
+    </div>
   );
 }
