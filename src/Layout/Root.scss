@@ -31,3 +31,24 @@ menu {
 menu>li {
     list-style: none;
 }
+
+.feed {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.feed>li  {
+    list-style: none;
+}
+
+.post_card {
+    display: flex;
+    flex-direction: column;
+    
+    width: 20rem;
+    height: 20rem; 
+
+    border: solid black .025rem;
+    margin: 1rem;
+    padding: .5rem;
+}

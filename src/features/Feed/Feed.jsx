@@ -18,17 +18,17 @@ export default function Feed() {
 
   return (
     <div className="feed_container">
-      <ul>
+      <ul className="feed">
         {!token ? (
-          <p>You must be logged in to see your make posts.</p>
+            <p>You must be logged in to see your make posts.</p>
         ) : (
           <MakePost />
         )}
         {isLoading ? (
-          <li>Loading...</li>
+            <li>Loading...</li>
         ) : (
           posts.map((post) => (
-            <li key={post._id}>
+            <li className="post_card" key={post._id}>
               <Link to={`/${post._id}`}>
                 <h2>{post.title}</h2>
               </Link>
