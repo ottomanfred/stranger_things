@@ -17,6 +17,7 @@ body {
 nav {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
 
     height: 6rem;
     border-bottom: solid black .25px;
@@ -57,6 +58,7 @@ menu>li {
     height: 20rem; 
 
     border: solid black .025rem;
+    border-radius: 5%;
     margin: 1rem;
     padding: .5rem;
 }

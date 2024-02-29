@@ -27,7 +27,7 @@ export default function SinglePost() {
       {isLoading ? (
         <p>Post is loading</p>
       ) : (
-        <article>
+        <article className="post_card">
           <h2>{post.title}</h2>
           <p>{post.description}</p>
           <p>{post.price}</p>
