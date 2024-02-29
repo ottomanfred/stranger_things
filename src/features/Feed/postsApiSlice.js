@@ -17,7 +17,7 @@ const postsApi = api.injectEndpoints({
     }),
     deletePost: builder.mutation({
       query: (id) => ({
-        url: "/recipes/" + id,
+        url: "/posts/" + id,
         method: "DELETE",
       }),
       invalidatesTags: ["Posts"],

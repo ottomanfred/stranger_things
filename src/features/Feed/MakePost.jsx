@@ -6,7 +6,6 @@ export default function MakePost() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
-  const [post, setPost] = useState("post");
   const [addPost] = useAddPostMutation();
 
   const create = async (e) => {

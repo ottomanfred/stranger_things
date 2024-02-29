@@ -1,11 +1,12 @@
 import { useSelector } from "react-redux";
-import { useGetPostsQuery } from "./postsApiSlice";
+import { useGetPostsQuery, useDeletePostMutation } from "./postsApiSlice";
 import { Link } from "react-router-dom";
 import { selectToken } from "../Login/authSlice";
 import MakePost from "./MakePost";
 
 export default function Feed() {
   const { data: posts, isLoading } = useGetPostsQuery();
+  const [deletePost] = useDeletePostMutation();
 
   const token = useSelector(selectToken);
 
@@ -27,6 +28,11 @@ export default function Feed() {
               </Link>
               <p>{post.description}</p>
               <p>{post.price}</p>
+              {token && post.author.username === "foo" ? (
+                <button onClick={() => deletePost(post._id)}>Delete</button>
+              ) : (
+                <></>
+              )}
             </li>
           ))
         )}

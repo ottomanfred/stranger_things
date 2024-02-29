@@ -1,6 +1,25 @@
+body {
+    width: 100vw;
+}
+
+#root {
+    width: 90%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#root:nth-child(1){
+    height: 95vh;
+}
+
 nav {
     display: flex;
     align-items: baseline;
+
+    height: 6rem;
+    border-bottom: solid black .25px;
 }
 
 menu {
