@@ -1,5 +1,9 @@
 import { useSelector } from "react-redux";
-import { useGetPostsQuery, useDeletePostMutation } from "./postsApiSlice";
+import {
+  useGetPostsQuery,
+  useDeletePostMutation,
+  useVerifyUserQuery,
+} from "./postsApiSlice";
 import { Link } from "react-router-dom";
 import { selectToken } from "../Login/authSlice";
 import MakePost from "./MakePost";
@@ -9,6 +13,8 @@ export default function Feed() {
   const [deletePost] = useDeletePostMutation();
 
   const token = useSelector(selectToken);
+
+  const { data: verification } = useVerifyUserQuery(token);
 
   return (
     <div className="feed_container">
@@ -28,7 +34,7 @@ export default function Feed() {
               </Link>
               <p>{post.description}</p>
               <p>{post.price}</p>
-              {token && post.author.username === "foo" ? (
+              {token && post.author.username === verification ? (
                 <button onClick={() => deletePost(post._id)}>Delete</button>
               ) : (
                 <></>
